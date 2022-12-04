@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <!-- todo -->
+            <h1>Todo</h1>
+            <div class="card mb-2">
+                <div class="card-header">Task</div>
+                <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+            </div>
+            <div class="card mb-2">
+                <div class="card-header bg-primary text-white">Task</div>
+                <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <!-- ongoing -->
+            <h1>Ongoing</h1>
+
+            <div class="card mb-2">
+                <div class="card-header">Task</div>
+                <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <!-- done -->
+            <h1>Testing</h1>
+
+            <div class="card mb-2">
+                <div class="card-header">Task</div>
+                <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+            </div>
+
+            <div class="card mb-2">
+                <div class="card-header">Task</div>
+                <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+            <!-- done -->
+            <h1>Done</h1>
+
+            <div class="card mb-2">
+                <div class="card-header">Task</div>
+                <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+            </div>
+
+            <div class="card mb-2">
+                <div class="card-header">Task</div>
+                <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $(".col-md-3").sortable({
+                connectWith: ".col-md-3",
+                handle: ".card-header",
+                cancel: ".card-toggle",
+                //placeholder: "card-placeholder ui-corner-all"
+            });
+
+            $(".card")
+                .addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
+                .find(".card-header")
+                .addClass("ui-widget-header ui-corner-all")
+
+
+            //$(".card-toggle").click(function () {
+            //    var icon = $(this);
+            //    icon.toggleClass("ui-icon-minusthick ui-icon-plusthick");
+            //    icon.closest(".card").find(".card-body").toggle();
+            //});
+        });
+    </script>
+}

@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    /*   .active {
+                        border-color: blue;
+                        background: grey;
+                    }*/
+    .invisible {
+        visibility: hidden !important;
+    }
+
+    .highlight {
+        /*border: 1px solid #707070;*/
+        font-weight: bold;
+        font-size: 45px;
+        background-color: #dfdfdf;
+    }
+</style>
+<div class="container">
+    <h1>ODALAMA | HOTEL 2 </h1>
+    <hr />
+    <div class="row">
+        <table class="table">
+            <tr>
+                <td class="col-md-2">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <h5>YOLCU LİSTESİ</h5>
+                        </div>
+                        <ul class="list-group" id="sortable-1">
+                            <li class="list-group-item">
+                                Ali Yasin DOĞAN   <span class="badge bg-primary rounded-pill">2</span>
+                            </li>
+                            <li class="list-group-item">
+                                Ali DOĞAN     <span class="badge bg-primary rounded-pill">2</span>
+                            </li>
+                            <li class="list-group-item">
+                                Doğan YASİN
+                                <span class="badge bg-info rounded-pill">3</span>
+                            </li>
+                            <li class="list-group-item invisible"></li>
+                        </ul>
+                    </div>
+                </td>
+                <td class="col-md-5">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-header">
+                                    <h5>101 (2)</h5>
+                                </div>
+                                <ul class="list-group" id="sortable-2">
+                                    <li class="list-group-item invisible"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-header">
+                                <h5>101 (3)</h5>
+                                </div>
+                                <ul class="list-group" id="sortable-3">
+                                    <li class="list-group-item invisible"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="~/js/custom-sortable.js"></script>
+}

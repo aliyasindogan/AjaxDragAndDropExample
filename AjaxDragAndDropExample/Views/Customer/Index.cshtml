@@ -1,0 +1,70 @@
+﻿<style>
+    .card .card-badge {
+        position: absolute;
+        top: -10px;
+        left: -30px;
+        padding: 5px;
+        background: blue;
+        color: white;
+        transform: rotate(-20deg);
+    }
+</style>
+<div class="container">
+    <div class="row" id="ListCustomers">
+        <div class="col-3" id="mytable">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">FullName</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var customer in ViewBag.ListCustomers)
+                    {
+                        <tr>
+                            <td>@customer.Id</td>
+                            <td>@customer.FullName</td>
+                            <input type="hidden" class="customerId" value="@customer.Id" />
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-9">
+            <div class="row">
+                @foreach (var room in ViewBag.ListRooms)
+                {
+                    <div class="col-3">
+                        <div class="card" id="card-@room.Id" data-value="@room.Id">
+                            <div class="card-header">
+                                <h5>
+                                    @room.RoomName | @room.RoomTypeID
+                                </h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                @foreach (var item in ViewBag.ListCustomerRooms)
+                                {
+                                    @if (@item.RoomID == @room.Id)
+                                    {
+                                        <li class="list-group-item">@item.FullName   <a href="/CustomerRoom/Delete/@item.CustomerRoomID">Sil  </a></li>
+                                    }
+                                }
+                            </ul>
+                            <div class="card-footer text-muted">
+                                2 days ago
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+@section Scripts
+    {
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="~/js/custom.js"></script>
+    }
