@@ -37,9 +37,9 @@ namespace AjaxDragAndDropExample.Models
                         new Customer { Id = 4, FullName = "Rıza DOĞAN" },
                         new Customer { Id = 5, FullName = "Salih DOĞAN" },
                         new Customer { Id = 6, FullName = "Emre DOĞAN" },
-                        new Customer { Id = 7, FullName = "Bulut DOĞAN" },
-                        new Customer { Id = 8, FullName = "Polat DOĞAN" },
-                        new Customer { Id = 9, FullName = "Memati DOĞAN" });
+                        new Customer { Id = 7, FullName = "Serhat DOĞAN" },
+                        new Customer { Id = 8, FullName = "Fırat DOĞAN" },
+                        new Customer { Id = 9, FullName = "Murat DOĞAN" });
 
                 modelBuilder.Entity<RoomType>().HasData(
                     new RoomType { Id = 1, RoomTypeName = "Tekli Oda" },
